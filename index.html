@@ -1,0 +1,94 @@
+<script type="text/javascript" src="BudgetCalc.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<style>
+  html {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Roboto";
+    background: #f7f7f7;
+  }
+  #pageDiv {
+    padding: 1% 10% 10% 10%;
+    background: White;
+    border-radius: 10px;
+    border: .125px solid #bdc6ca;
+    border-top: 10px solid green!important;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.22)
+  }
+  input {
+    overflow: visible;
+    cursor: text;
+    padding: 6px 12px;
+    border-radius: .175rem!important;
+    border: 1px solid #bdc6ca;
+    font: 400 14px Helvetica;
+  }
+  table {
+    border-spacing: 10px;
+  }
+  #appGrid {
+    display: flex;
+  }
+  #leftSide {
+    display: grid;
+    grid-row-gap: 15px;
+    padding-right: 15px;
+  }
+  .gridItem {
+    border-radius: 10px;
+    border: .5px solid LightGray;
+    padding: 20px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.22)
+  }
+</style>
+<html>
+  <div id="pageDiv">
+    <h1>Simple Money Calculator</h1>
+    <div id="appGrid">
+      <div id="leftSide">
+        <table class="gridItem">
+          <tr>
+            <td>Desired Salary (annual):</td>
+            <td><input type="number" min="0.01" step="0.01" id="salary" placeholder="$0.00"></input></td>
+          </tr>
+          <tr>
+            <td>Desired Rent (monthly):</td>
+            <td><input type="number" min="0.01" step="0.01" id="rent" placeholder="$0.00"></input></td>
+          </tr>
+          <tr><td><button onclick="updateText()">Calculate</button></td></tr>
+        </table>
+        <table class="gridItem">
+          <tr ><td>Money left over (Yearly): </td><td id="leftoverYear">$0.00</td></tr>
+          <tr><td>Money left over (Monthly): </td><td id="leftoverMonth">$0.00</td></tr>
+        </table>
+      </div>
+      <table class="gridItem" id="monthlyBills">
+        <!-- I'd like to put a table showing the default values for the bills here-->
+        <tr>
+          <td>Monthly Subscription Services (Netflix, Hulu, etc):</td>
+          <td><input id="monthlySubs" value="100.00"></td>
+        </tr>
+        <tr>
+          <td>Truck Payment:</td>
+          <td><input id="truckPayment" value="400.00"></td>
+        </tr>
+        <tr>
+          <td>Truck Insurance:</td>
+          <td><input id="truckInsurance" value="75.00"></td>
+        </tr>
+        <tr>
+          <td>Phone Bill:</td>
+          <td><input id="phoneBill" value="100.00"></td>
+        </tr>
+        <tr>
+          <td>Internet Bill:</td>
+          <td><input id="internetBill" value="70.00"></td>
+        </tr>
+        <tr>
+          <td>Utilities (Gas/Water/Electricity/Trash):</td>
+          <td><input id="utilitiesBill" value="100.00"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</html>
